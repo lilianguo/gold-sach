@@ -1,6 +1,18 @@
+import java.util.Deque;
+
 class ShortestSubarrayWithSumK {
-    // TLE
-    public int shortestSubarray(int[] nums, int s) {
+    // sliding window
+    /*
+    We can rephrase this as a problem about the prefix sums of A. Let P[i] = A[0] + A[1] + ... + A[i-1]. We want the smallest y-x such that y > x and P[y] - P[x] >= K.
+
+    Motivated by that equation, let opt(y) be the largest x such that P[x] <= P[y] - K. We need two key observations:
+
+    If x1 < x2 and P[x2] <= P[x1], then opt(y) can never be x1, as if P[x1] <= P[y] - K, then P[x2] <= P[x1] <= P[y] - K but y - x2 is smaller. This implies that our candidates x for opt(y) will have increasing values of P[x].
+
+    If opt(y1) = x, then we do not need to consider this x again. For if we find some y2 > y1 with opt(y2) = x, then it represents an answer of y2 - x which is worse (larger) than y1 - x.
+
+    */
+    public int shortestSubarray(int[] nums, int K) {
         if (nums == null || nums.length == 0) {
             return -1;
         }
@@ -12,13 +24,15 @@ class ShortestSubarrayWithSumK {
             //System.out.println("pSum[i] : " + pSum[i]);
         }
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i <= nums.length; i++) {
-            for (int j = i - 1; j >= 0; j--) {
-                int currSum = pSum[i] - pSum[j];
-                if (currSum >= s) {
-                    min = Math.min(min, i - j);
-                }
+        Deque<Integer> monoq = new LinkedList<>();
+        for (int y = 0; y < pSum.length; y++) {
+            while(!monoq.isEmpty() && pSum[y] <= pSum[monoq.getLast()]) {
+                monoq.removeLast();
             }
+            while(!monoq.isEmpty() && pSum[y] >= pSum[monoq.getFirst()] + K) {
+                min = Math.min(min, y - monoq.removeFirst());
+            }
+            monoq.addLast(y);
         }
         return min == Integer.MAX_VALUE ? -1 : min;
     }
