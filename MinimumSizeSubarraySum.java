@@ -26,7 +26,7 @@ class MinimumSizeSubarraySum {
         return min == Integer.MAX_VALUE ? 0 : min;
     }
 
-    // two pointers + binary search
+    // two pointers: O(n) time, O(1) space
     public int minSubArrayLenII(int s, int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;

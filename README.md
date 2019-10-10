@@ -1,3 +1,39 @@
+Onsite:
+第一轮：三哥加国人哥：问简历，然后利口 爸气留 寺尔 幺灵幺
+第二轮：三哥 利口 伞伞 伞尔尔变种
+第三轮：白人哥加国人小姐姐 一道很简单的b‍‍‍‍‍‌‍‍‌‍‌‌‌‌‌‌‍‌inary search 一道很简单的DP  利口 漆爸  还有一道system design，应该是一个他们真的在用的系统，听不太懂需求是什么
+第四轮：纯BQ聊天
+
+
+（1）纽约的两个中国人面的bq， 狂问简历和工作经验
+
+（2）LC 4 median of two sorted array
+
+(3) design ticketmaster, 问的特别细， 从输入网址后浏览器的行为开始问起，到api和数据库的设计，最后时间来不及没有把系统设计说完
+
+第一个题是find stepping numbers, 第二题就是best time buy and sell stock。
+
+，development life cycle, 然后debug的一个基本流程思路，以及debugger具体功能。加上一些简历上的东西。
+
+how to scale
+
+
+昂赛第一轮 java基础知识 queue，linkedlist基本操作，trie tree变种题
+昂赛第二轮 DAG最短路径 dijkstra，质数分解，利口儿舅无‍‍‍‍‍‌‍‍‌‍‌‌‌‌‌‌‍‌
+昂赛第三轮 讨论如何做test以及情景案例
+昂赛第四轮 设计文件传输系统
+昂赛第五轮 纯bq
+
+1.简历细节问题，解释(两个最经典cache 算法中的一个，简单的那个)，找出二叉的第某个元素。
+2.简历细节问题，给一个字符序列，它重新定义了英文字母的顺序，给一个字符串列表，判断根据重新定义的字符顺序，列表是否排好序。bipartite 问题。
+3.简历细节问题，问了许多synchronized database 问题，以及如何保持MongoDB的consistency，尤其有读写冲突的时候，跪妥妥的
+4.Singleton class ， synchronized block 问题，can static method be synchronized method？ 找出array中 sub array加起来等于k的个数
+5.bq hr 面，问什么离开现在公司，如何做选择数据库种类的决定，解释流程，被告知需要和队友商量，凉凉。。
+6.还有一轮hr面，但是被告知跪了。。
+
+************************
+
+
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=539558&highlight=goldman%2Bsach%2B%B5%E7%C3%E6
 
 分数以array形式表现，比如 [[1, 2], [‍‍‍‍‍‌‍‍‌‍‌‌‌‌‌‌‍‌1, 3],[5, 6]], 就是要写个函数能计算1/2 + 1/3 = 5/6。解法参考 https://www.geeksforgeeks.org/program-to-add-two-fractions/

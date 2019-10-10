@@ -29,7 +29,7 @@ Note:
     All keys and values will be in the range of [0, 1000000].
     The number of operations will be in the range of [1, 10000].
     Please do not use the built-in HashMap library.
-
+https://my.oschina.net/yysue/blog/1864017 
 
 */
 class DesignHashMap {
