@@ -39,4 +39,31 @@ class HighFive {
     }
 
     //或者用最小堆，维持size 5, 大于5时poll 堆顶，最后就是5个最大的
+    public int[][] highFiveII(int[][] items) {
+        if (items == null || items.length == 0) {
+            return new int[1][1];
+        }
+        Map<Integer, PriorityQueue<Integer>> map = new HashMap<>();
+        for (int[] item : items) {
+            int id = item[0];
+            int score = item[1];
+            map.putIfAbsent(id, new PriorityQueue<>());
+            map.get(id).add(score);
+            if (map.get(id).size() > 5) {
+                map.get(id).poll();
+            }
+        }
+        
+        int[][] res = new int[map.size()][2];
+        int i = 0;
+        for (int id : map.keySet()) {
+            int sum = 0;
+            int size = map.get(id).size();
+            while (!map.get(id).isEmpty()) {
+                sum += map.get(id).poll();
+            }
+            res[i++] = new int[] {id, sum/size};
+        }
+        return res;
+    }
 }
