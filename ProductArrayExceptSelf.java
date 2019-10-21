@@ -42,7 +42,7 @@ class ProductArrayExceptSelf {
         return res;
     }
 
-    public int[] productExceptSelf(int[] nums) {
+    public int[] productExceptSelfII(int[] nums) {
         int[] left = new int[nums.length];
         int[] right = new int[nums.length];
         left[0] = nums[0];
